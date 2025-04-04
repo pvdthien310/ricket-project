@@ -10,9 +10,10 @@
     <description>sms-service</description>
     <packaging>pom</packaging>
 
-    <properties>
-        <java.version>21</java.version>
-    </properties>
-
+    <modules>
+        <module>app</module>
+        <module>api</module>
+        <module>api-impl</module>
+    </modules>
 
 </project>
