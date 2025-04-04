@@ -1,0 +1,13 @@
+input NotificationDTO {
+    message: String!
+    sender: String!
+    receiver: String!
+}
+
+type Query {
+    getNotification(notification: NotificationDTO) : String!
+}
+
+type Mutation {
+    sendNotification(notification: NotificationDTO) : String!
+}
