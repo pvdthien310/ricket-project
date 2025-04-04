@@ -36,9 +36,11 @@ public class NotificationServiceImpl implements NotificationService {
             try {
                 ClassPathResource resource = new ClassPathResource("templates/mail-template.html");
                 String htmlContent = new String(Files.readAllBytes(resource.getFile().toPath()), StandardCharsets.UTF_8);
+                htmlContent = htmlContent.replace("$name", notification.getOrder().getCustomerName());
+                htmlContent = htmlContent.replace("$totalAmount", notification.getOrder().getTotalAmount().toString());
                 MimeMessage message = emailSender.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
-                helper.setFrom("thuckhungfa@gmail.com");
+                helper.setFrom("abcd@gmail.com");
                 helper.setTo(notification.getToEmail());
                 helper.setSubject(notification.getSubject());
                 helper.setText(htmlContent, true);

@@ -19,8 +19,8 @@ public class NotificationActivityImpl implements NotificationActivity {
     @Override
     public void sendNotification(OrderDTO orderDTO) {
         String body = MessageFormat.format("Subject: {0} {1}", orderDTO.getOrderId(), orderDTO.getNotificationMethod().name());
-        String subject = MessageFormat.format("Vietcombank Thông báo biến động số dư tài khoản của quý khách", orderDTO.getCustomerName(), orderDTO.getOrderId());
-        NotificationDTO notificationDTO = new NotificationDTO(orderDTO.getEmail(), subject, body, orderDTO.getNotificationMethod());
+        String subject = MessageFormat.format("Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ của shop ạ", orderDTO.getCustomerName(), orderDTO.getOrderId());
+        NotificationDTO notificationDTO = new NotificationDTO(orderDTO.getEmail(), subject, body, orderDTO.getNotificationMethod(), orderDTO);
         rSocketNotificationClientAPI.sendNotification(notificationDTO);
         System.out.println("NotificationActivityImpl " + orderDTO);
     }

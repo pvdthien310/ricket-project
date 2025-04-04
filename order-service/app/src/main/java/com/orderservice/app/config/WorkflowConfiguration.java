@@ -5,6 +5,7 @@ import io.temporal.client.WorkflowClientOptions;
 import io.temporal.serviceclient.WorkflowServiceStubs;
 import io.temporal.serviceclient.WorkflowServiceStubsOptions;
 import io.temporal.worker.WorkerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -12,17 +13,26 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class WorkflowConfiguration {
 
+    @Value("${temporal.order.namespace}")
+    private String namespace;
+
+    @Value("${temporal.host}")
+    private String host;
+
+    @Value("${temporal.port}")
+    private String port;
+
     @Bean
     @Primary
     public WorkflowClient workflowClient() {
         var stubs = WorkflowServiceStubs.newServiceStubs(
                 WorkflowServiceStubsOptions.newBuilder()
-                        .setTarget("127.0.0.1:7233")
+                        .setTarget(host + ":" + port)
                         .build()
         );
         return WorkflowClient.newInstance(stubs,
                 WorkflowClientOptions.newBuilder()
-                        .setNamespace("order").build());
+                        .setNamespace(namespace).build());
     }
 
 

@@ -13,4 +13,5 @@ public class NotificationDTO {
     private String subject;
     private String body;
     private NotificationMethod method;
+    private OrderDTO order;
 }

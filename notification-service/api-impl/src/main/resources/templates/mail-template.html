@@ -2,110 +2,74 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Thông Báo Giao Dịch Thành Công - Vietcombank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xác Nhận Đặt Hàng Thành Công</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f8f9fa;
       padding: 20px;
     }
     .container {
-      background-color: #ffffff;
       max-width: 600px;
       margin: auto;
-      border: 1px solid #e0e0e0;
+      background: #fff;
       padding: 20px;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
     .header {
-      background-color: #00703c;
+      background-color: #28a745;
+      color: white;
       padding: 15px;
-      color: #ffffff;
-      text-align: center;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
+      border-radius: 5px 5px 0 0;
     }
     .content {
-      margin: 20px 0;
+      padding: 20px;
+      font-size: 16px;
       line-height: 1.6;
     }
-    .transaction-details {
-      background-color: #f9f9f9;
+    .order-details {
+      background: #f1f1f1;
       padding: 15px;
-      border: 1px solid #e0e0e0;
       border-radius: 5px;
-    }
-    .transaction-details table {
-      width: 100%;
-    }
-    .transaction-details th, .transaction-details td {
       text-align: left;
-      padding: 8px 0;
+      margin: 20px 0;
     }
-    .footer {
-      text-align: center;
-      color: #888888;
-      font-size: 12px;
-      margin-top: 20px;
+    .order-details p {
+      margin: 5px 0;
     }
     .highlight {
-      color: #00703c;
+      color: #28a745;
       font-weight: bold;
+    }
+    .footer {
+      font-size: 12px;
+      color: #888;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-
 <div class="container">
-  <div class="header">THÔNG BÁO GIAO DỊCH THÀNH CÔNG</div>
-
+  <div class="header">ĐẶT HÀNG THÀNH CÔNG</div>
   <div class="content">
-    Kính gửi <strong>Tran Tri Thuc</strong>,<br><br>
-    Vietcombank trân trọng thông báo: Quý khách đã nhận được khoản chuyển tiền vào tài khoản của mình với thông tin chi tiết như sau:
+    <p>Chào <strong>$name</strong>,</p>
+    <p>Cảm ơn bạn đã mua sắm tại cửa hàng của chúng tôi. Đơn hàng của bạn đã được xác nhận và đang trong quá trình xử lý.</p>
+    <div class="order-details">
+      <p><strong>Mã đơn hàng:</strong> <span class="highlight">#123456789</span></p>
+      <p><strong>Ngày đặt hàng:</strong> 02/04/2025</p>
+      <p><strong>Tổng tiền:</strong> <span class="highlight">$totalAmount</span></p>
+      <p><strong>Phương thức thanh toán:</strong> Thanh toán khi nhận hàng (COD)</p>
+    </div>
+    <p>Chúng tôi sẽ thông báo khi đơn hàng được giao. Nếu có bất kỳ câu hỏi nào, vui lòng liên hệ <strong>hotline: 1900 1234</strong>.</p>
   </div>
-
-  <div class="transaction-details">
-    <table>
-      <tr>
-        <th>Số tài khoản nhận:</th>
-        <td><strong>0123 4567 8901</strong></td>
-      </tr>
-      <tr>
-        <th>Tên người nhận:</th>
-        <td><strong>Nguyễn Trần Duy Trung</strong></td>
-      </tr>
-      <tr>
-        <th>Số tiền:</th>
-        <td class="highlight">2,000,000 VND</td>
-      </tr>
-      <tr>
-        <th>Nội dung chuyển khoản:</th>
-        <td>Chuyển tiền hỗ trợ ABC</td>
-      </tr>
-      <tr>
-        <th>Người gửi:</th>
-        <td>Tran Tri Thuc</td>
-      </tr>
-      <tr>
-        <th>Thời gian giao dịch:</th>
-        <td>02/02/2025 - 14:30:45</td>
-      </tr>
-      <tr>
-        <th>Mã giao dịch:</th>
-        <td>VCB1234567890</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="content">
-    Quý khách vui lòng kiểm tra thông tin giao dịch. Mọi thắc mắc xin liên hệ tổng đài <strong>1900 54 54 13</strong> để được hỗ trợ kịp thời.
-  </div>
-
   <div class="footer">
-    © 2025 Vietcombank. Mọi quyền được bảo lưu.<br>
-    Đây là email tự động, vui lòng không trả lời email này.
+    &copy; 2025 Cửa Hàng Online. Mọi quyền được bảo lưu.
   </div>
 </div>
-
 </body>
 </html>
