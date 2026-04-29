@@ -31,7 +31,7 @@ public class NotificationServiceImpl implements NotificationService {
         }
 
         if (notification.getMethod().compareTo(NotificationMethod.SMS) == 0) {
-            return rSocketSmsClientApi.sendMessage("12345");
+            return rSocketSmsClientApi.sendMessage("123456789");
         } else {
             try {
                 ClassPathResource resource = new ClassPathResource("templates/mail-template.html");
